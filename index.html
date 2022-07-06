@@ -16,13 +16,17 @@
         <div class="container-fluid m-auto w-50 mt-5">
             <div class="row">
                 <div class="col-12">
-                    <ul class="list-group">
-                        <li class="list-group-item" v-for="(item, index) in todos" :key="index" :class="{'text-decoration-line-through': item.done}">
-                                 {{todos[index].text}}
-                            <div @click="removeItem(item)" class="btn btn-dark">X</div>
+                    <ul class="list-group rounded-3">
+                        <li class="row justify-content-between bg-gradient border" v-for="(item, index) in todos" :key="index" :class="{'text-decoration-line-through': item.done}">
+                            <div @click="changeStatus(index)" class="text-content col-11">{{todos[index].text}}</div>
+                            <div @click="removeItem(index)" class="col-1 btn btn-dark">X</div>
                         </li>
                     </ul>
-
+                </div>
+                <div class="col-8 m-auto">
+                    <label for="text">Vuoi aggiungere qualcosa?</label>
+                    <input type="text" v-model="newItem">
+                    <button class="btn-primary" @click="addItem(newItem)">Add</button>
                 </div>
             </div>
         </div>

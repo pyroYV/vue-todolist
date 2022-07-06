@@ -15,6 +15,11 @@ const app = new Vue ({
                 done: false
             }
         ]
-    }
+    },
+    methods: {
+        removeItem(index){
+            this.todos.splice(index,1)
+        }
+    },
 
 })

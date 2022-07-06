@@ -13,14 +13,16 @@
 <body>
     <div id="app">
 
-        <div class="container-fluid m-auto">
+        <div class="container-fluid m-auto w-50 mt-5">
             <div class="row">
                 <div class="col-12">
                     <ul class="list-group">
                         <li class="list-group-item" v-for="(item, index) in todos" :key="index" :class="{'text-decoration-line-through': item.done}">
-                            {{todos[index].text}}
+                                 {{todos[index].text}}
+                            <div @click="removeItem(item)" class="btn btn-dark">X</div>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </div>

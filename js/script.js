@@ -26,8 +26,10 @@ const app = new Vue ({
             this.todos[index].done = !this.todos[index].done
         },
         addItem(userInput){
-            console.log(userInput)
-            this.todos.push(userInput).text
+            let newObj = {}
+            newObj.text = userInput
+            newObj.done = false
+            this.todos.push(newObj)
             newItem = ''
         }
     },

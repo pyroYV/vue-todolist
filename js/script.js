@@ -29,9 +29,14 @@ const app = new Vue ({
             // newItem = {}
             // newItem.text = userInput
             // newItem.done = false
-            this.todos.push({text:userInput, done:false})
+            if(userInput === ''){
+                alert('ao')
+            }else{
 
-            this.newItem = ''
+                this.todos.push({text:userInput, done:false})
+    
+                this.newItem = ''
+            }
         }
     },
 

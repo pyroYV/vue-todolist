@@ -1,0 +1,8 @@
+body{
+background-image: linear-gradient(rgb(249, 255, 71) , rgb(27, 44, 194)); 
+height: 100vh;
+}
+
+.row{
+    background-color: whitesmoke;
+}

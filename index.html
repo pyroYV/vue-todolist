@@ -13,20 +13,22 @@
 <body>
     <div id="app">
 
-        <div class="container-fluid m-auto w-50 mt-5">
-            <div class="row">
+        <div class="container-fluid m-auto w-50 mt-5 ">
+            <div class="row rounded-3">
                 <div class="col-12">
-                    <ul class="list-group rounded-3">
+                    <ul class="list-group">
                         <li class="row justify-content-between bg-gradient border" v-for="(item, index) in todos" :key="index" :class="{'text-decoration-line-through': item.done}">
-                            <div @click="changeStatus(index)" class="text-content col-11">{{todos[index].text}}</div>
+                            <div @click="changeStatus(index)" class="text-content col-11">
+                                {{todos[index].text}}
+                            </div>
                             <div @click="removeItem(index)" class="col-1 btn btn-dark">X</div>
                         </li>
                     </ul>
                 </div>
                 <div class="col-8 m-auto">
                     <label for="text">Vuoi aggiungere qualcosa?</label>
-                    <input type="text" v-model="newItem" @keyup.enter="addItem(newItem)">
-                    <button class="btn-primary" @click="addItem(newItem)">Add</button>
+                    <input type="text" v-model.trim="newItem" @keyup.enter="addItem(newItem)">
+                    <button class="btn btn-primary" @click="addItem(newItem)">Add</button>
                 </div>
             </div>
         </div>
